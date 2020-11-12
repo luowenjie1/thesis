@@ -1,0 +1,266 @@
+\documentclass[11pt,compress,xcolor=x11names,UTF8]{beamer}
+\usetheme{Singapore}
+\usefonttheme{structurebold}
+\usecolortheme[named=SpringGreen4]{structure}
+\usepackage{gradientframe} % 图片立体感
+\graphicspath{{figure/}} % 图片路径
+\usepackage{calligra} % Thank you
+\usepackage{ctex} 
+
+
+\useinnertheme{circles}
+\usepackage{pifont}
+\usepackage{academicons}
+\usepackage{fontawesome}
+\usepackage{iitem}
+\usepackage{amsmath}
+\setbeamertemplate{itemize item}{\ding{108}}
+\setbeamertemplate{itemize subitem}{\ding{109}}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent}  
+\renewcommand\appendixname{附录}
+\renewcommand\abstractname{摘要}
+\graphicspath{{figure/}} % 图片路径
+\usepackage{calligra} % Thank you
+\usepackage{ctex} % 加入中文
+
+\usepackage{url}					
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.2}
+\title{环境管制降低了污染还是转移了污染？}
+\subtitle{——基于《大气污染防治重点城市划定方案》的实证研究}
+\author[罗文杰]{学生：罗文杰 \and 导师：向训勇 } 
+\institute[暨南大学]{产业经济研究院 \and 2019级硕士开题答辩} 
+\date{2020/11/11}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{文章内容}
+
+\subsection{政策评价}
+
+	\begin{frame}{政策评价}
+		\textbf{《大气污染防治重点城市》}
+		\begin{itemize}
+			\item 2002年12月，在《大气污染防治法》基础上制定
+			\item 选取了113个重点防治城市
+			\item 要求在2005年达到国家环境大气质量标准
+			\begin{itemize}
+				\item 二氧化硫、二氧化氮、悬浮颗粒物、可吸入颗粒物
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{污染降低还是污染替代？}
+		\textbf{企业如何减少排污？}
+	\begin{itemize}
+		\item change-in-process
+		\begin{itemize}
+			\item 减少生产量
+			\item 购买更清洁的生产设备
+		\end{itemize}
+	
+		\item end-of-pipe
+		\begin{itemize}
+			\item 沉渣室和气体洗涤器
+			\item 气体污染转移到地面、水中
+		\end{itemize}
+	\end{itemize}
+	\end{frame}
+
+
+
+\subsection{文献综述}
+	\begin{frame}{文献综述}
+		\begin{itemize}
+			\item 环境管制的有效性
+			\begin{itemize}
+				\item 包群, 邵敏, 杨大利, 2013. 环境管制抑制了污染排放吗?[J]. 经济研究, 12: 42-54.
+				\item {\rmfamily Greenstone M, 2004. Did the Clean Air Act cause the remarkable decline in sulfur dioxide concentrations?[J]. Journal of Environmental Economics and Management, 47(3): 585-611.}
+			\end{itemize}
+			
+			\item 环境管制引致的污染替代
+			\begin{itemize}
+				\item  {\rmfamily Greenstone M, 2003. Estimating regulation-induced substitution: The effect of the Clean Air Act on water and ground pollution[J]. American Economic Review, 93(2): 442-448.}
+				\item  {\rmfamily Gibson M, 2019. Regulation-induced pollution substitution[J]. Review of Economics and Statistics, 101(5): 827-840.}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+\subsection{边际创新}
+	\begin{frame}{边际创新}
+		\begin{enumerate}
+			\item 从``数''和``量''两方面评价政策
+			\begin{itemize}
+				\item ``数''：环境管制有没有降低污染
+				\item ``量''：企业通过什么方式降低污染
+			\end{itemize}
+			\item 较新的企业层面数据
+			\item 识别微观企业的应对策略
+			\begin{itemize}
+				\item 污染排放的主体
+				\item 地区和行业层面的数据
+				\item 考察企业的异质性
+			\end{itemize}
+		\end{enumerate}
+
+	\end{frame}
+
+\section{计量模型}
+
+\subsection{DID}
+	\begin{frame}{计量方程}
+	\begin{equation}
+		Pollutant_{it} =\alpha_{i} + \gamma_{t} + \beta_1  Treat_{i} \times Post2003_{t} + X _{it}'\delta  + \epsilon_{it}
+	\end{equation}
+	\begin{itemize}
+		\item 下标$i$表示企业，下标$t$表示年份
+		\item $Pollutant_{it}$ 为企业$i$在$t$年排放的污染物量
+		\item 若企业$i$所在城市为大气污染防治重点城市，则$Treat_{i} $为1，否则为0
+		\item 2003年及以后$Post2003_{t}$为1，2003年以前为0
+		\item $X _{it}'$为企业层面的控制变量
+		\item $\alpha_{i} $和$ \gamma_{t} $分别为个体固定效应和时间固定效应
+	\end{itemize}
+
+	\end{frame}
+
+\subsection{企业排污}
+\begin{frame}{初步结果}{初步结果-空气污染物}
+
+	
+	\begin{tabular}{l*{4}{c}}
+		\hline\hline
+		&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+		&\multicolumn{1}{c}{ln($SO_2$)}&\multicolumn{1}{c}{ln(煤炭消费)}&\multicolumn{1}{c}{ln(烟尘)}&\multicolumn{1}{c}{ln(工业粉尘)}\\
+		\hline
+		$Treat_{i} \times$      &   -0.228***&   -0.230***&   -0.181***&  -0.0477*  \\
+		 $Post2003_{t}$ &  (-7.45)   &  (-9.91)   &  (-5.30)   &  (-1.67)   \\
+		\hline
+		控制变量       &   Y&   Y&   Y&  Y \\
+        固定效应                 & Y  & Y   &  Y   &  Y  \\
+       
+		\hline
+		\(N\)     &   206660   &   161785   &   201432   &   176259   \\
+		\(R^{2}\) &    0.849   &    0.908   &    0.820   &    0.901   \\
+		\hline\hline
+	\end{tabular}
+	
+\end{frame}
+
+\begin{frame}{初步结果-水污染物}
+	
+	
+\begin{tabular}{l*{3}{c}}
+	\hline\hline
+	&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+	&\multicolumn{1}{c}{ln(氨氮排放量)}&\multicolumn{1}{c}{ln(COD排放量)}&\multicolumn{1}{c}{ln(废水排放量)}\\
+	\hline
+	$Treat_{i} \times$      &    0.322***&  -0.0610*  &  -0.0120   \\
+	 $Post2003_{t}$ &   (9.78)   &  (-1.82)   &  (-0.39)   \\
+		\hline
+控制变量       &   Y&   Y&    Y \\
+固定效应                 & Y  & Y   &  Y   \\
+\hline
+	\hline
+	\(N\)     &   148298   &   206369   &   209487   \\
+	\(R^{2}\) &    0.752   &    0.805   &    0.814   \\
+	\hline\hline
+
+\end{tabular}
+	
+\end{frame}
+
+\subsection{污染替代}
+\begin{frame}{污染替代}
+	Gibson M, 2019. Regulation-induced pollution substitution[J]. Review of Economics and Statistics, 101(5): 827-840.
+	\begin{equation}
+	ln(\tfrac{AirPollutant_{it}}{WaterPollutant_{it}}) =\alpha_{i} + \gamma_{t} + \beta_1  Treat_{i} \times Post2003_{t} + X _{it}'\delta  + \epsilon_{it}
+	\end{equation}  
+\begin{tabular}{l*{4}{c}}
+	\hline\hline
+	&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+	&\multicolumn{1}{c}{$SO_2$/废水}&\multicolumn{1}{c}{煤炭/废水}&\multicolumn{1}{c}{烟尘/废水}&\multicolumn{1}{c}{粉尘/废水}\\
+	\hline
+	$Treat_{i} \times$       &  -0.0325***&-0.000585   &  -0.0281***& -0.00757   \\
+	$Post2003_{t}$ &  (-4.06)   &  (-0.20)   &  (-4.02)   &  (-1.22)   \\
+		\hline
+控制变量       &   Y&   Y&   Y&  Y \\
+固定效应                 & Y  & Y   &  Y   &  Y  \\
+	\hline
+	\(N\)     &   170039   &   131947   &   167396   &   144242   \\
+	\(R^{2}\) &    0.774   &    0.785   &    0.739   &    0.859   \\
+	\hline\hline
+
+\end{tabular}
+\end{frame}
+
+
+\section{未来的工作计划}
+\subsection{政策的内生性}
+	\begin{frame}{PSM匹配}
+		\textbf{政策制定和要求}
+		\begin{itemize}
+		\item 全国有大气环境质量监测数据的338个城市
+		\item 城市总体规划、环境保护规划目标和城市大气环境质量状况
+		\item 综合经济能力和环境污染现状
+		\end{itemize}
+	\end{frame}
+\subsection{机制检验}
+	\begin{frame}{机制检验}
+		\begin{itemize}
+			\item 企业间
+			\begin{itemize}
+				\item 企业进入与退出
+			\end{itemize}
+			\item 企业内
+			\begin{itemize}
+				\item 污染处理
+				\item 经济特征
+			\end{itemize}
+			
+		\end{itemize}
+		
+
+	\end{frame}
+\subsection{稳健性与异质性检验}
+
+	\begin{frame}{稳健性与异质性检验}
+		\textbf{稳健性}
+		\begin{itemize}
+			\item DID平行趋势检验
+			\begin{itemize}
+				\item 处理组和控制组的污染物排放量
+				\item 政策的动态效应
+			\end{itemize}
+		\end{itemize}
+		\textbf{异质性}
+		\begin{itemize}
+			\item 行业层面
+			\begin{itemize}
+				\item 污染行业和非污染行业
+				\item 空气污染行业和非空气污染行业
+			\end{itemize}
+		\item 企业层面
+		\begin{itemize}
+			\item 国有企业和非国有企业
+		\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}
+	\centering {\zihao{0}  \calligra{Thank You}}
+	\end{frame}
+
+
+
+
+
+\end{document} 
+
+
